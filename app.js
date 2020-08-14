@@ -48,7 +48,7 @@ function displayConnectionInfo() {
 
     for (let key in all_activity) {
         let a = all_activity[key];
-        msg += `${a.name} \u2b9e ${a.connectTo}\n`;
+        msg += `${a.name} > ${a.connectTo}\n`;
     }
 
     document.querySelector("#Connect").innerText = msg;
@@ -56,7 +56,7 @@ function displayConnectionInfo() {
 
 function displayCriticalPathInfo() {
     let msg = "";
-    all_critical_path.forEach((x) => { msg += x.join(" \u2b9e ") + "\n"; })
+    all_critical_path.forEach((x) => { msg += x.join(" > ") + "\n"; })
 
     document.querySelector("#CriticalPath").innerText = msg;
 }
