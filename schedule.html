@@ -1,0 +1,163 @@
+<html>
+<style>
+    #InputArea span {
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    /*
+    #Steps * {
+        vertical-align: top;
+    }
+
+    #Steps span {
+        padding-top: 60px;
+        display: inline-block;
+    }*/
+
+    .hidden {
+        display: none;
+    }
+
+    #InputArea button {
+        margin-bottom: 10px;
+    }
+
+    table tr {
+        text-align: center;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    table td {
+        border: 1px solid #777;
+        padding: 5px;
+        min-width: 20px;
+    }
+
+    #InputArea table input {
+        max-width: 150px;
+    }
+
+    #InputArea table tr:first-child td {
+        border-top: 0;
+    }
+
+    #InputArea table tr td:first-child {
+        border-left: 0;
+    }
+
+    #InputArea table tr:last-child td {
+        border-bottom: 0;
+    }
+
+    #InputArea tr td:last-child {
+        border-right: 0;
+    }
+
+    #OutputArea table {
+        display: inline-block;
+        margin-right: 30px;
+        margin-bottom: 30px;
+    }
+
+    #OutputGanttChart {
+        margin-bottom: 30px;
+    }
+</style>
+<script src="./Activity.js"></script>
+<body>
+    <div id="InputArea">
+        <h3>Input Area</h3>
+
+        <span>Project Activities: </span>
+        <table>
+            <tr>
+                <td>Activity</td>
+                <td>Activity Dependency</td>
+                <td>Duration</td>
+            </tr>
+            <tr class="content">
+                <td>A</td>
+                <td><input value=""/></td>
+                <td><input value="15"/></td>
+            </tr>
+            <tr class="content">
+                <td>B</td>
+                <td><input value=""/></td>
+                <td><input value="7"/></td>
+            </tr>
+            <tr class="content">
+                <td>C</td>
+                <td><input value=""/></td>
+                <td><input value="4"/></td>
+            </tr>
+            <tr class="content">
+                <td>D</td>
+                <td><input value=""/></td>
+                <td><input value="12"/></td>
+            </tr>
+            <tr class="content">
+                <td>E</td>
+                <td><input value="B"/></td>
+                <td><input value="6"/></td>
+            </tr>
+            <tr class="content">
+                <td>F</td>
+                <td><input value="C,D"/></td>
+                <td><input value="17"/></td>
+            </tr>
+            <tr class="content">
+                <td>G</td>
+                <td><input value="A,E"/></td>
+                <td><input value="9"/></td>
+            </tr>
+            <tr class="content">
+                <td>H</td>
+                <td><input value="G"/></td>
+                <td><input value="3"/></td>
+            </tr>
+            <tr class="content">
+                <td>I</td>
+                <td><input value="G"/></td>
+                <td><input value="5"/></td>
+            </tr>
+            <tr class="content">
+                <td>J</td>
+                <td><input value=""/></td>
+                <td><input value=""/></td>
+            </tr>
+            <tr class="content">
+                <td>K</td>
+                <td><input value=""/></td>
+                <td><input value=""/></td>
+            </tr>
+        </table>
+        <br>
+        <button onclick="eventConfirmChange()">Confirm</button>
+    </div>
+    <hr />
+    <div id="OutputArea">
+        <h3>Output Area</h3>
+        <canvas id="OutputGanttChart">
+
+        </canvas>
+        <div id="OutputTables">
+
+        </div>
+        <div id="OutputText">
+            <h4>Connect:</h4>
+            <span id="Connect"></span>
+            <br>
+            <h4>Critical Path:</h4>
+            <span id="CriticalPath"></span>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+
+</body>
+
+</html>
